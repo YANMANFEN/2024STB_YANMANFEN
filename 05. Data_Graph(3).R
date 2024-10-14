@@ -37,4 +37,4 @@ hist(survey$Age, main="age", col=terrain.colors(12))
 boxplot(Age ~ Grade, data = survey, main="Grade 별 Age에 대한 기술적 분석", col="yellow", xlab="Grade", ylab="Age")
 
 #11
-plot(x=survey$Grade, y=survey$Age, xlab="grade", ylab="age", main="비교")
+plot(x=survey$Gender, y=survey$Age, xlab="grade", ylab="age", main="비교")
