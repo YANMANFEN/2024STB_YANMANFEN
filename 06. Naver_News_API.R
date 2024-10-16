@@ -16,11 +16,11 @@ library(RmecabKo)
 
 #뉴스 API 설정(Client_ID와 Client_Secret은 개인별로 추가)
 searchUrl <- "https://openapi.naver.com/v1/search/news.xml"
-Client_ID <- "input your Client_ID"
-Client_Secret <- "input your Client_Secret"
+Client_ID <- "Cv_bTMGcfHqJBtMR7utY"
+Client_Secret <- "6giBvtbg96"
 
 #뉴스 URL 작성(UTF-8로 암호화, API 요청할 URL 정의, 검색결과는 100로 요청)
-query <- URLencode(iconv("경영통계", to="UTF-8"))
+query <- URLencode(iconv("mihoyo", to="UTF-8"))
 url <- paste(searchUrl, "?query=", query, "&display=100&start=1&sort=sim", sep="")
 
 #문서 다운로드_URI 다운로드하기
@@ -83,3 +83,22 @@ wordcloud(nouns.df.sort[,1],
                 random.order=F,
                 random.color=T,
                 colors=rainbow(10))
+
+
+
+
+
+install.packages("RColorBrewer")
+library(RColorBrewer)
+install.packages("RmecabKo")
+install.packages("RMeCab", repos = "http://rmecab.jp/R", type = "source")
+Sys.setenv("MECAB_PATH" = "C:/Program Files (x86)/MeCab")
+install.packages("devtools")
+devtools::install_github("junhewk/RmecabKo")
+install.packages("reticulate")
+library(reticulate)
+use_python("your/python/path")
+
+Sys.which("python")
+Sys.setenv(RETICULATE_PYTHON = "C:/Users/23967/AppData/Local/Microsoft/WindowsApps/python.exe")
+
